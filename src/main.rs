@@ -20,7 +20,7 @@ impl Ressolution {
     }
 
     fn get_dar(&self) -> f32 {
-        (self.width / self.height) as f32
+        self.width as f32 / self.height as f32
     }
 
     fn get_ar(&self) -> (u32, u32) {
