@@ -1,6 +1,12 @@
-use std::{io::{self, Write}, process::exit};
-
 use gcd::Gcd;
+
+use std::{
+    io::{
+        self,
+        Write
+    },
+    process::exit
+};
 
 struct Ressolution {
     width: u32,
@@ -51,9 +57,14 @@ fn main() {
         .read_line(&mut input)
         .expect("Error on input");
 
-    let test: Vec<&str> = input.trim().split("x").collect();
+    let number: Vec<&str> = input.trim().split("x").collect();
 
-    if let Some(num) = test.get(0) {
+    if number.len() != 2 {
+        eprintln!("Please input valid parameter");
+        exit(7);
+    }
+
+    if let Some(num) = number.get(0) {
         width = match num.parse() {
             Ok(num) => num,
             Err(e) => {
@@ -66,7 +77,7 @@ fn main() {
         exit(1)
     }
 
-    if let Some(num) = test.get(1) {
+    if let Some(num) = number.get(1) {
         height = match num.parse() {
             Ok(num) => num,
             Err(e) => {
