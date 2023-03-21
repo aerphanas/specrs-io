@@ -49,7 +49,7 @@ fn main() {
 
     io::stdin()
         .read_line(&mut input)
-        .expect("");
+        .expect("Error on input");
 
     let test: Vec<&str> = input.trim().split("x").collect();
 
